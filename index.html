@@ -3,58 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Care & Comfort Test</title>
+  <title>Comfort & Care for You 💖</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
-  <!-- PAGE 1: DYNAMIC MOOD & LOVE METER -->
+  <!-- PAGE 1: PERIOD & COMFORT METER -->
   <section id="page-meter" class="card">
-    <div id="cat-avatar" class="cat-avatar">😿</div>
-    <h2 id="meter-label">How much do you need comforting today?</h2>
-    <div class="percentage-display" id="percent-text">0%</div>
-
-    <div class="slider-container">
-      <input type="range" id="loveSlider" min="0" max="100" value="0">
+    <!-- PAD / COMFORT IMAGE SLOT -->
+    <div class="cramp-image-container">
+      <img src="chosopads.png" alt="Comfort Pads" class="cramp-img" onerror="this.style.display='none'; document.getElementById('cat-avatar').style.display='block';">
+      <div id="cat-avatar" class="cat-avatar" style="display:none;">😿</div>
     </div>
 
-    <button id="next-to-gifts" class="btn hidden" onclick="showPage('page-gifts')">Next →</button>
+    <h2 id="meter-label">How bad are the cramps today?</h2>
+    <div class="percentage-display" id="percent-text">Mild Cramps 🪶</div>
+
+    <div class="slider-container">
+      <input type="range" id="crampSlider" min="1" max="5" value="1">
+    </div>
+
+    <button id="next-to-gifts" class="btn" onclick="showPage('page-gifts')">Unlock Comfort Package →</button>
   </section>
 
   <!-- PAGE 2: GIFT SELECTION -->
-  <section id="page-gifts" class="card hidden">
-    <h2>You passed the love test</h2>
-    <p class="subtitle">Your surprises are waiting for you</p>
+  <section id="page-gifts" class="card">
+    <h2>I'm Here For You ❤️</h2>
+    <p class="subtitle">Pick a gift to open your comfort surprise:</p>
     
     <div class="gifts-grid">
       <div class="gift-card" onclick="showPage('page-bouquet')">
-        <span class="gift-icon">🎁</span>
+        <span class="gift-icon">💐</span>
+        <p>Bouquet</p>
       </div>
       <div class="gift-card" onclick="showPage('page-music')">
-        <span class="gift-icon">🎁</span>
+        <span class="gift-icon">🎵</span>
+        <p>Music</p>
       </div>
       <div class="gift-card" onclick="showPage('page-letter')">
-        <span class="gift-icon">🎁</span>
+        <span class="gift-icon">💌</span>
+        <p>Letter</p>
       </div>
     </div>
+    
+    <button class="btn secondary" onclick="showPage('page-qr')">📱 View Site QR Code</button>
   </section>
 
-  <!-- PAGE 3A: BOUQUET & FLOATING NOTES -->
-  <section id="page-bouquet" class="card hidden">
-    <h2>Your Bouquet 🌹</h2>
+  <!-- PAGE 3A: BOUQUET WITH FLOATING NOTES -->
+  <section id="page-bouquet" class="card">
+    <h2>Your Comfort Bouquet 🌹</h2>
     <div class="bouquet-stage">
-      <div class="floating-note top-left">You make my heart bloom</div>
+      <div class="floating-note top-left">I hope this makes your heart bloom</div>
       <div class="floating-note top-right">I choose you every day</div>
-      <div class="bouquet-img">💐</div>
-      <div class="floating-note bottom-left">Life feels better with you</div>
-      <div class="floating-note bottom-right">My love for you keeps growing (ma'am don't take it as cringe just for today)</div>
+      
+      <div class="bouquet-container">
+        <img src="bouquet.png" alt="Flowers for you" class="bouquet-img" onerror="this.style.display='none'; document.getElementById('emoji-fallback').style.display='block';">
+        <div id="emoji-fallback" style="display:none; font-size:100px;">💐</div>
+      </div>
+
+      <div class="floating-note bottom-left">Life feels much better with you</div>
+      <div class="floating-note bottom-right">Take all the rest you need and all the sleep</div>
     </div>
-    <button class="btn" onclick="showPage('page-gifts')">Next →</button>
+    <button class="btn" onclick="showPage('page-gifts')">Back to Surprises ←</button>
   </section>
 
   <!-- PAGE 3B: MUSIC PLAYER -->
-  <section id="page-music" class="card hidden">
-    <h2>A Song For You 🎵</h2>
+  <section id="page-music" class="card">
+    <h2>Comforting Vibes 🎵</h2>
     <div class="music-player-card">
       <div class="cover-art">🕊️</div>
       <h3>Donna (Remastered 2017)</h3>
@@ -64,19 +80,27 @@
         Your browser does not support audio playback.
       </audio>
     </div>
-    <button class="btn" onclick="showPage('page-gifts')">Next →</button>
+    <button class="btn" onclick="showPage('page-gifts')">Back to Surprises ←</button>
   </section>
 
   <!-- PAGE 3C: LOVE LETTER -->
-  <section id="page-letter" class="card hidden">
+  <section id="page-letter" class="card">
     <h2>A Letter From My Heart 💌</h2>
     <div class="letter-box">
       <div class="cat-corner">🐱</div>
-      <p>You make my life feel more beautiful and meaningful, and I feel so lucky to have you. I love you wholeheartedly, and I can't wait to continue caring for you every day.</p>
-      <p>Take it easy today, rest up, and let me take care of the rest.</p>
-      <p class="signature">Always, forever. ❤️</p>
+      <p>I know today might feel extra heavy and uncomfortable, but I want to remind you how much I care about you (no cringe just for today).</p>
+      <p>Please rest up, stay warm, and if I lived close I'd handle the rest. I’d be right there whenever you need snacks, a heating pad, or just someone.</p>
+      <p class="signature">Always & forever. ❤️</p>
     </div>
-    <button class="btn" onclick="showPage('page-gifts')">Next →</button>
+    <button class="btn" onclick="showPage('page-gifts')">Back to Surprises ←</button>
+  </section>
+
+  <!-- PAGE 4: AUTOMATIC QR CODE DISPLAY -->
+  <section id="page-qr" class="card">
+    <h2>Scan & Share 💖</h2>
+    <p class="subtitle">Here is the direct QR code for this care package:</p>
+    <div id="qrcode-container"></div>
+    <button class="btn" onclick="showPage('page-gifts')">Back to Surprises ←</button>
   </section>
 
   <script src="script.js"></script>
