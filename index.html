@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comfort & Care for You 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PAGE 1: MOOD & CRAMP CHECK-IN -->
+  <section id="page-checkin" class="card">
+    <div class="emoji-header">🧸</div>
+    <h2>How are you feeling right now?</h2>
+    <p class="subtitle">Drag the slider to unlock your comfort package</p>
+
+    <div class="percentage-display" id="status-text">Mild Cramps 🪶</div>
+
+    <div class="slider-container">
+      <input type="range" id="crampSlider" min="1" max="4" value="1">
+    </div>
+
+    <button id="next-btn" class="btn" onclick="showPage('page-surprises')">Open Your Comfort Kit →</button>
+  </section>
+
+  <!-- PAGE 2: COMFORT COUPONS -->
+  <section id="page-surprises" class="card hidden">
+    <h2>I've Got You Covered ❤️</h2>
+    <p class="subtitle">Tap a gift box to claim a comfort treat:</p>
+
+    <div class="gifts-grid">
+      <div class="gift-box" onclick="showPage('page-snack')">🍫</div>
+      <div class="gift-box" onclick="showPage('page-pamper')">🛋️</div>
+      <div class="gift-box" onclick="showPage('page-note')">💌</div>
+    </div>
+  </section>
+
+  <!-- PAGE 3A: SNACK COUPON -->
+  <section id="page-snack" class="card hidden">
+    <h2>Craving Delivery 🛵</h2>
+    <div class="content-box">
+      <p class="big-icon">🍨🍕</p>
+      <p><strong>Redeemable for:</strong></p>
+      <p>Your exact food, chocolate, or drink craving delivered right to your door. No questions asked!</p>
+    </div>
+    <button class="btn" onclick="showPage('page-surprises')">Back to Comfort Kit ←</button>
+  </section>
+
+  <!-- PAGE 3B: PAMPER COUPON -->
+  <section id="page-pamper" class="card hidden">
+    <h2>Zero Effort Day 💆‍♀️</h2>
+    <div class="content-box">
+      <p class="big-icon">🛁🧸</p>
+      <p><strong>Redeemable for:</strong></p>
+      <p>A fresh hot water bottle, lower back massage, and full control over the movie remote tonight.</p>
+    </div>
+    <button class="btn" onclick="showPage('page-surprises')">Back to Comfort Kit ←</button>
+  </section>
+
+  <!-- PAGE 3C: SWEET NOTE -->
+  <section id="page-note" class="card hidden">
+    <h2>Just a Reminder... 💌</h2>
+    <div class="content-box letter">
+      <p>I know today might feel heavy and uncomfortable, but I’m right here if you need anything at all—whether that’s snacks, a heating pad, or just quiet cuddles.</p>
+      <p>Take it easy today. You deserve to just rest! ❤️</p>
+    </div>
+    <button class="btn" onclick="showPage('page-surprises')">Back to Comfort Kit ←</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
