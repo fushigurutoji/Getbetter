@@ -1,39 +1,20 @@
-const slider = document.getElementById('loveSlider');
-const percentText = document.getElementById('percent-text');
-const meterLabel = document.getElementById('meter-label');
-const catAvatar = document.getElementById('cat-avatar');
-const nextBtn = document.getElementById('next-to-gifts');
+/* PAD IMAGE & AVATAR STYLES */
+.cramp-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  min-height: 100px;
+}
 
-slider.addEventListener('input', (e) => {
-  const val = parseInt(e.target.value);
-  
-  // Calculate dynamic love percentages up to 1000%
-  let displayVal = val * 10; 
-  percentText.innerText = `${displayVal}%`;
+.cramp-img {
+  max-width: 140px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
 
-  if (val < 20) {
-    catAvatar.innerText = "😿";
-    meterLabel.innerText = "Only that much?";
-  } else if (val < 45) {
-    catAvatar.innerText = "😿";
-    meterLabel.innerText = "That hurts...";
-  } else if (val < 65) {
-    catAvatar.innerText = "😾";
-    meterLabel.innerText = "Half? Seriously?";
-  } else if (val < 90) {
-    catAvatar.innerText = "😻";
-    meterLabel.innerText = "Aww, that's more like it!";
-  } else {
-    percentText.innerText = "1000%";
-    catAvatar.innerText = "😻✨";
-    meterLabel.innerText = "Correct answer!";
-    nextBtn.classList.remove('hidden');
-  }
-});
-
-function showPage(pageId) {
-  const pages = document.querySelectorAll('.card');
-  pages.forEach(page => page.classList.add('hidden'));
-
-  document.getElementById(pageId).classList.remove('hidden');
+.cat-avatar {
+  font-size: 70px;
+  transition: transform 0.2s ease;
 }
