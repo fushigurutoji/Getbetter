@@ -2,116 +2,184 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', sans-serif;
 }
 
 body {
-  background-color: #fcf0f2;
+  background-color: #fce4ec;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 15px;
 }
 
 .card {
-  background: #ffffff;
-  border: 2px solid #f2c4ce;
-  border-radius: 24px;
-  padding: 30px;
+  background: #fff0f3;
+  border: 3px solid #ffccd5;
+  border-radius: 28px;
+  padding: 25px;
   width: 100%;
-  max-width: 400px;
+  max-width: 440px;
   text-align: center;
-  box-shadow: 0 10px 20px rgba(218, 120, 145, 0.12);
+  box-shadow: 0 12px 30px rgba(230, 100, 135, 0.2);
+  position: relative;
 }
 
 .hidden {
   display: none !important;
 }
 
-.emoji-header {
-  font-size: 50px;
+.cat-avatar {
+  font-size: 70px;
   margin-bottom: 10px;
+  transition: transform 0.2s ease;
 }
 
 h2 {
-  color: #b83253;
+  color: #c2185b;
   font-size: 1.3rem;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  color: #777;
-  font-size: 0.85rem;
-  margin-top: 5px;
+  color: #888;
+  font-size: 0.9rem;
 }
 
 .percentage-display {
-  font-size: 1.2rem;
-  color: #b83253;
+  font-size: 2.2rem;
+  color: #ad1457;
   font-weight: bold;
-  margin: 25px 0 15px 0;
+  margin: 15px 0;
 }
 
 .slider-container input {
   width: 100%;
-  accent-color: #d85d7c;
+  accent-color: #ff4081;
   cursor: pointer;
 }
 
 .btn {
-  margin-top: 25px;
-  background-color: #d85d7c;
+  margin-top: 20px;
+  background-color: #ff4081;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 24px;
   border-radius: 20px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s, background 0.2s;
 }
 
 .btn:hover {
-  background-color: #b83253;
-  transform: scale(1.03);
+  background-color: #c2185b;
+  transform: scale(1.05);
 }
 
+/* GIFTS GRID */
 .gifts-grid {
   display: flex;
-  justify-content: space-around;
-  margin-top: 25px;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 10px;
 }
 
-.gift-box {
-  font-size: 45px;
+.gift-card {
+  background: #ffffff;
+  border: 2px solid #ffccd5;
+  border-radius: 16px;
+  padding: 20px 10px;
+  flex: 1;
   cursor: pointer;
   transition: transform 0.3s;
-  background: #fff5f7;
-  padding: 10px;
-  border-radius: 16px;
 }
 
-.gift-box:hover {
-  transform: scale(1.15) rotate(5deg);
+.gift-card:hover {
+  transform: translateY(-8px);
 }
 
-.content-box {
-  background: #fff5f7;
-  padding: 20px;
-  border-radius: 16px;
-  margin: 20px 0;
-  color: #444;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.big-icon {
+.gift-icon {
   font-size: 40px;
+}
+
+/* BOUQUET PAGE */
+.bouquet-stage {
+  position: relative;
+  padding: 40px 0;
+}
+
+.bouquet-img {
+  font-size: 100px;
+  margin: 10px 0;
+}
+
+.floating-note {
+  background: #fff;
+  border: 1px solid #ffccd5;
+  border-radius: 12px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  color: #c2185b;
+  position: absolute;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.top-left { top: 0; left: 0; }
+.top-right { top: 0; right: 0; }
+.bottom-left { bottom: 0; left: 0; }
+.bottom-right { bottom: 0; right: 0; }
+
+/* MUSIC PLAYER */
+.music-player-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.cover-art {
+  font-size: 60px;
+  background: #ffe6ed;
+  border-radius: 12px;
+  padding: 15px;
   margin-bottom: 10px;
 }
 
-.letter p {
-  margin-bottom: 10px;
+.artist-name {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+audio {
+  width: 100%;
+}
+
+/* LETTER PAGE */
+.letter-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
   text-align: left;
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 20px 0;
 }
 
+.cat-corner {
+  font-size: 35px;
+  float: left;
+  margin-right: 10px;
+}
+
+.signature {
+  text-align: right;
+  font-weight: bold;
+  color: #ff4081;
+  margin-top: 15px;
+}
